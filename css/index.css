@@ -1,71 +1,62 @@
+
+
 main{
     width: 100%;
     height: 100vh;
-    background-color: var(--marrom-escuro);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-#logo {
-   transition: transform 0.1s ease-out;
+    background-color: var(--preto);
     position: relative;
-    z-index: 10;
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    will-change: transform;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#logo img{
-    height: 384px;
-}
-
-footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
-    gap: 16px;
-    position: fixed;
-    left: 0;
+    overflow: hidden;
+}
+
+main #setaBaixo{
+    position: absolute;
+    width: 64px;
     bottom: 0;
-    width: 100%;
-    height: 64px;
+}
+footer{
     background-color: var(--laranja);
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
 }
-
-
-
-/* animação idle */
-/* @keyframes floatAnimation {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
-.dinamico {
-    animation: floatAnimation 3s ease-in-out infinite;
-} */
-
-/* Mantendo a interação do mouse */
-.active-mouse {
-    animation: none !important;
-}
-
-a{
-    text-decoration: none;
-    color: var(--preto);
+footer a{
+    color: var(--branco);   
 }
 
 
 
 .zoom-in {
-    transform-origin: 59% 40%; /* ajuste para a parte específica da imagem */
+    transform-origin: 64% 61%; /* ajuste para a parte específica da imagem */
     transform: scale(70);
     transition: transform 0.6s ease-in-out;
+}
+
+
+
+.seta {
+    animation: animarSeta 1.5s infinite; /* Animação contínua */
+}
+
+/* Animação da seta apontando para baixo */
+@keyframes animarSeta {
+    0% {
+        transform: translateY(0); /* Posição inicial */
+    }
+    25% {
+        transform: translateY(10px); /* Primeiro movimento para baixo */
+    }
+    50% {
+        transform: translateY(20px); /* Segundo movimento para baixo */
+    }
+    75% {
+        transform: translateY(0); /* Retorna à posição inicial */
+    }
+    100% {
+        transform: translateY(0); /* Mantém a posição inicial (pausa de 2s) */
+    }
 }

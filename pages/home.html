@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <img src="../assets/logo/fire-droid_logo_text.svg" alt="FIREDROID GAME STUDIO">
+        <img  src="../assets/logo/fire-droid_logo_text.svg" alt="FIREDROID GAME STUDIO">
         <nav>
             <a href="http://" target="_blank" rel="noopener noreferrer">Jogos</a>
             <a href="http://" target="_blank" rel="noopener noreferrer">Sobre nós</a>
@@ -18,7 +18,7 @@
         </nav>
     </header>
     <div id="conteudo1">
-        <img src="../assets/logo/fire-droid_logo_droid_default.svg" alt="">
+        <img id="logoFiredroid" src="../assets/logo/fire-droid_logo_droid_default.svg" alt="">
         <div class="carrossel">
             <div class="slides">
                 <div class="slide"><img src="https://picsum.photos/600/300?1" alt="1"></div>
@@ -29,5 +29,17 @@
     </div>
     <div id="conteudo2" style="width: 100%; height: 100vh;"></div>
     <script src="../script/carrossel.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const logoFiredroid = document.getElementById('logoFiredroid');
+
+        // Aplica o zoom-out após o carregamento da página
+        setTimeout(() => {
+            logoFiredroid.classList.add('zoom-out');
+        }, 300); // Inicia o zoom-out logo após o carregamento (100ms delay)
+    });
+
+    </script>
 </body>
 </html>

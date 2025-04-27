@@ -3,11 +3,14 @@
   padding: 0;
   margin: 0;
 }
+body{
+  width: 100%;
+}
 :root {
 --laranja: #ED7D31;
 --marrom-escuro: #4F4A45;
 --preto: #1A1A1A;
---braco: #F6F1EE;
+--branco: #F6F1EE;
 }
 @font-face {
   font-family: 'MuktaVaani';
@@ -34,3 +37,5 @@ a:hover {
   font-size: 24px;
   color: white;
 }
+
+

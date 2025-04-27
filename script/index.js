@@ -1,51 +1,61 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const logo = document.getElementById('logo');
-    const main = document.getElementById('containerLogo');
+    // const logo = document.getElementById('logo');
+    // const main = document.getElementById('containerLogo');
     
-    // Coordenadas do centro da logo
-    const MedidasLogo = logo.getBoundingClientRect();
-    const centroX = MedidasLogo.left + MedidasLogo.width / 2;
-    const centroY = MedidasLogo.top + MedidasLogo.height / 2;
+    // // Coordenadas do centro da logo
+    // const MedidasLogo = logo.getBoundingClientRect();
+    // const centroX = MedidasLogo.left + MedidasLogo.width / 2;
+    // const centroY = MedidasLogo.top + MedidasLogo.height / 2;
     
-    main.addEventListener('mousemove', (e) => {
-        logo.classList.add('active-mouse');
+    // main.addEventListener('mousemove', (e) => {
+    //     logo.classList.add('active-mouse');
 
-        // Distância do cursor ao centro
-        const distanciaX = e.clientX - centroX;
-        const distanciaY = e.clientY - centroY;
+    //     // Distância do cursor ao centro
+    //     const distanciaX = e.clientX - centroX;
+    //     const distanciaY = e.clientY - centroY;
         
-        // Calcula a direção oposta
-        const distancia = Math.sqrt(distanciaX * distanciaX + distanciaY * distanciaY);
-        const maxDistancia = 300;
+    //     // Calcula a direção oposta
+    //     const distancia = Math.sqrt(distanciaX * distanciaX + distanciaY * distanciaY);
+    //     const maxDistancia = 300;
         
-        if (distancia < maxDistancia) {
-            const moveFactor = (maxDistancia - distancia) / maxDistancia;
-            const intensidade = 0.15;
-            const moveX = -distanciaX * moveFactor * intensidade;
-            const moveY = -distanciaY * moveFactor * intensidade;
+    //     if (distancia < maxDistancia) {
+    //         const moveFactor = (maxDistancia - distancia) / maxDistancia;
+    //         const intensidade = 0.15;
+    //         const moveX = -distanciaX * moveFactor * intensidade;
+    //         const moveY = -distanciaY * moveFactor * intensidade;
             
-            logo.style.transform = `translate(${moveX}px, ${moveY}px)`;
-        } else {
-            logo.style.transform = 'translate(0, 0)';
-        }
-    });
+    //         logo.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    //     } else {
+    //         logo.style.transform = 'translate(0, 0)';
+    //     }
+    // });
     
-    main.addEventListener('mouseleave', () => {
-        logo.style.transform = 'translate(0, 0)';
-    });
+    // main.addEventListener('mouseleave', () => {
+    //     logo.style.transform = 'translate(0, 0)';
+    // });
 
 
 
     const logoFiredroid = document.getElementById('logoFiredroid');
 
     logoFiredroid.addEventListener('click', (e) => {
-        e.preventDefault(); // Impede redirecionamento imediato
+        const larguraTotal = logoFiredroid.offsetWidth;
+        const alturaTotal = logoFiredroid.offsetHeight;
 
-        logoFiredroid.classList.add('zoom-in');
+        const xClique = e.offsetX;
+        const yClique = e.offsetY;
 
-        // Aguarda a animação terminar antes de redirecionar
-        setTimeout(() => {
-            window.location.href = "./pages/home.html";
-        }, 600); // mesmo tempo da transição do CSS
+        const porcentagemX = (xClique / larguraTotal) * 100;
+        const porcentagemY = (yClique / alturaTotal) * 100;
+
+        if (porcentagemX >= 59 && porcentagemX <= 69 && porcentagemY >= 56 && porcentagemY <= 66) {
+
+            logoFiredroid.classList.add('zoom-in');
+
+
+            setTimeout(() => {
+                window.location.href = "./pages/home.html";
+            }, 600); // mesmo tempo da transição do CSS
+        }
     });
 });
