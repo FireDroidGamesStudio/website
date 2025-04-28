@@ -9,14 +9,23 @@
     <link rel="stylesheet" href="../css/home.css">
 </head>
 <body>
+    <div id="telaDeCarregamento">
+
+    </div>
     <header>
-        <img  src="../assets/logo/fire-droid_logo_text.svg" alt="FIREDROID GAME STUDIO">
+        <img src="../assets/logo/fire-droid_logo_text.svg" alt="FIREDROID GAME STUDIO">
+    
+        <button class="menu-toggle" aria-label="Abrir Menu">
+            ☰
+        </button>
+    
         <nav>
             <a href="http://" target="_blank" rel="noopener noreferrer">Jogos</a>
             <a href="http://" target="_blank" rel="noopener noreferrer">Sobre nós</a>
-            <a href="http://" target="_blank" rel="noopener noreferrer">Noticias</a>
+            <a href="http://" target="_blank" rel="noopener noreferrer">Notícias</a>
         </nav>
     </header>
+    
     <div id="conteudo1">
         <img id="logoFiredroid" src="../assets/logo/fire-droid_logo_droid_default.svg" alt="">
         <div class="carrossel">
@@ -28,18 +37,15 @@
         </div>
     </div>
     <div id="conteudo2" style="width: 100%; height: 100vh;"></div>
-    <script src="../script/carrossel.js"></script>
-
+    <script src="../script/home.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-        const logoFiredroid = document.getElementById('logoFiredroid');
-
-        // Aplica o zoom-out após o carregamento da página
-        setTimeout(() => {
-            logoFiredroid.classList.add('zoom-out');
-        }, 300); // Inicia o zoom-out logo após o carregamento (100ms delay)
-    });
-
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('header nav');
+    
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
     </script>
+    
 </body>
 </html>

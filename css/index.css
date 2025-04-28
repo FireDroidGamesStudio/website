@@ -30,33 +30,32 @@ footer a{
 
 
 
-.zoom-in {
-    transform-origin: 64% 61%; /* ajuste para a parte específica da imagem */
+.zoomInLogo {
+    transform-origin: 64% 61%;
     transform: scale(70);
     transition: transform 0.6s ease-in-out;
 }
 
 
 
-.seta {
-    animation: animarSeta 1.5s infinite; /* Animação contínua */
+.animacaoSetaParaBaixo {
+    animation: animarSeta 1.5s infinite;
 }
 
-/* Animação da seta apontando para baixo */
 @keyframes animarSeta {
     0% {
-        transform: translateY(0); /* Posição inicial */
+        transform: translateY(0);
     }
     25% {
-        transform: translateY(10px); /* Primeiro movimento para baixo */
+        transform: translateY(10px);
     }
     50% {
-        transform: translateY(20px); /* Segundo movimento para baixo */
+        transform: translateY(20px);
     }
     75% {
-        transform: translateY(0); /* Retorna à posição inicial */
+        transform: translateY(0);
     }
     100% {
-        transform: translateY(0); /* Mantém a posição inicial (pausa de 2s) */
+        transform: translateY(0); 
     }
 }
