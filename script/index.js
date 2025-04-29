@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const logoFiredroid = document.getElementById("logoFiredroid");
-
+  logoFiredroid.classList.remove("zoomInLogo");
   logoFiredroid.addEventListener("click", (e) => {
     logoFiredroid.classList.add("zoomInLogo");
     setTimeout(() => {
