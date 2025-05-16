@@ -66,7 +66,11 @@ header nav {
         display: block; /* Mostra o botão */
     }
 }
+.conteudo{
+    width: 100%;
+    padding:  16px 64px;
 
+}
 #conteudo1{
     display: flex;
     align-items: center;
@@ -80,6 +84,13 @@ header nav {
     min-width: 250px;
     max-width: 350px;
     z-index: 10;
+}
+
+#container3{
+    
+}
+#container3-conteudo {
+
 }
 .carrossel {
     height: 100vh;

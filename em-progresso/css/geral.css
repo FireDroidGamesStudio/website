@@ -5,6 +5,7 @@
 }
 body{
   width: 100%;
+  background-color: var(--preto);
 }
 :root {
 --laranja: #ED7D31;

@@ -1,34 +1,198 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Firedroid</title>
-    <link rel="icon" href="./assets/logo/fire-droid_logo_droid_default.svg" type="image/x-icon">
-    <link rel="stylesheet" href="./css/geral.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Mukta+Vaani:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+      :root {
+        --laranja: #ed7d31;
+        --marrom-escuro: #4f4a45;
+        --preto: #1a1a1a;
+        --braco: #f6f1ee;
+      }
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+        color: var(--braco);
 
-</head>
-<body>
-    <main>
-        <div id="zoomContainer">
-            <div id="idleContainer">
-                <img id="logoFiredroid" src="assets/logo/fire-droid_logo_droid_default.svg" alt="">
-            </div>
+        text-align: center;
+      }
+      a {
+        text-decoration: none;
+      }
+      h1 {
+        font-weight: 800;
+        letter-spacing: 2px;
+        /* pointer-events: none;
+              user-select: none; */
+      }
+      p {
+        padding-bottom: 5px;
+        font-size: 22px;
+        pointer-events: none; /* Impede cliques, seleção e eventos do mouse */
+        user-select: none; /* Impede que o texto seja selecionado */
+
+        /* transform: translate(0, -10px); */
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--marrom-escuro);
+      }
+      .labareda {
+        height: 100vh;
+        position: fixed;
+        pointer-events: none; /* Impede qualquer evento de clique */
+        user-select: none; /* Impede que a imagem seja selecionada */
+        -webkit-user-drag: none; /* Evita arrastar em navegadores WebKit */
+      }
+      .labareda-1 {
+        left: 0;
+        top: 0;
+      }
+      .labareda-2 {
+        right: 0;
+        top: 0;
+      }
+      .logo-firedroid {
+        height: 50vh;
+        pointer-events: none; /* Impede qualquer evento de clique */
+        user-select: none; /* Impede que a imagem seja selecionada */
+        -webkit-user-drag: none; /* Evita arrastar em navegadores WebKit */
+      }
+      .conteudo {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+      }
+
+      .redes {
+        height: 32px;
+        user-select: none; /* Impede que a imagem seja selecionada */
+        -webkit-user-drag: none;
+      }
+      .container-redes {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      @media (max-width: 600px) {
+        /* Se a largura for menor que 600px */
+        .labareda-1 {
+          content: url("assets/labareda-esquerda-cortada.svg"); /* Substitui a imagem */
+        }
+        .labareda-2 {
+          content: url("assets/labareda-direita-cortada.svg");
+        }
+      }
+      @media (max-width: 360px) {
+        /* Se a largura for menor que 600px */
+        .labareda-1 {
+          transform: translate(-20px, 0);
+        }
+        .labareda-2 {
+          transform: translate(20px, 0);
+        }
+      }
+      @media (max-width: 300px) {
+        /* Se a largura for menor que 600px */
+        .labareda-1 {
+          transform: translate(-40px, 0);
+        }
+        .labareda-2 {
+          transform: translate(40px, 0);
+        }
+      }
+      @media (max-width: 250px){
+        .labareda-1 {
+          opacity: 0;
+        }
+        .labareda-2 {
+          opacity: 0;
+        }
+        .logo-firedroid{
+          width: 80vw;
+        }
+        .container-redes{
+          display: block;
+        }
+        .conteudo{
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="./assets/labareda-esquerda.svg"
+      alt="Labaredas"
+      class="labareda-1 labareda"
+    />
+    <div class="conteudo">
+      <img src="assets/logo.svg" alt="Logo Firedroid" class="logo-firedroid" />
+      <div>
+        <p>Siga nossas redes sociais:</p>
+        <div class="container-redes">
+          <a href="https://www.instagram.com/firedroid" target="_blank">
+            <img src="./assets/instagram.svg" alt="Instagram" class="redes" />
+          </a>
+          <a href="https://www.tiktok.com/@fire.droid" target="_blank">
+            <img src="./assets/tiktok.svg" alt="Tiktok" class="redes" />
+          </a>
+          <a href="" target="_blank">
+            <img
+              src="./assets/x.svg"
+              alt="Twitter"
+              class="redes"
+              style="height: 28px"
+            />
+          </a>
+          <a href="" target="_blank">
+            <img
+              src="./assets/discord.svg"
+              alt="Discord"
+              class="redes"
+              style="height: 28px"
+            />
+          </a>
+
+          <a href="" target="_blank">
+            <img
+              src="./assets/youtube.svg"
+              alt="Youtube"
+              class="redes"
+              style="height: 38px"
+            />
+          </a>
+          <a
+            href="https://bsky.app/profile/firedroid.bsky.social"
+            target="_blank"
+          >
+            <img
+              src="./assets/bluesky.svg"
+              alt="Bluesky"
+              class="redes"
+              style="height: 30px"
+            />
+          </a>
         </div>
-        <img id="setaBaixo" class="animacaoSetaParaBaixo" src="assets/commun/seta-baixo-laranja.svg" alt="">
-        
-    </main>
-    <footer>
-        <a target="_blank" href="https://www.instagram.com/firedroid">Instagram</a>
-        <a target="_blank" href="https://www.tiktok.com/@fire.droid">Tiktok</a>
-        <a target="_blank" href="https://www.youtube.com/@firedroid">Youtube</a>
-        <a target="_blank" href="">Email</a>
-        <a target="_blank" href="https://x.com/FireDroidGS">X(Twitter)</a>
-    </footer>
-    <script src="./script/index.js">
-
-
-    </script>
-</body>
+      </div>
+    </div>
+    <img
+      src="./assets/labareda-direita.svg"
+      alt="Labaredas"
+      class="labareda labareda-2"
+    />
+  </body>
 </html>
+
